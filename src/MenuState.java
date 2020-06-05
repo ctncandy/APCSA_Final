@@ -17,7 +17,7 @@ public class MenuState extends State
 	@Override
 	public void render(Graphics g)
 	{
-		g.drawImage(Asset.walkBack, 0, 0, null);
+		g.drawImage(Asset.standStill, 0, 0, null);
 	}
 
 }
