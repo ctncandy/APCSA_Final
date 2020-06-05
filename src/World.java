@@ -20,9 +20,13 @@ public class World
 	
 	public void render(Graphics g)
 	{
-		for(int y = 0; y < height; y++)
+		int xStart = 0;
+		int xEnd = width;
+		int yStart = 0;		
+		int yEnd = height;
+		for(int y = yStart; y < yEnd; y++)
 		{
-			for(int x = 0; x < width; x++)
+			for(int x = xStart; x < xEnd; x++)
 			{
 				getTile(x, y).render(g, (int) (x * Tile.TILEWIDTH - game.getGameCamera().getxOffset()), 
 						(int) (y * Tile.TILEHEIGHT - game.getGameCamera().getyOffset()));
@@ -30,7 +34,15 @@ public class World
 		}
 	}
 	
-	public Tile getTile(int x, int y){
+	public Tile getTile(int x, int y)
+	{
+		if(x < 0 || y < 0 || x >= width || y >= height)
+		{	
+			return Tile.grassTile;
+		}
+		
+		
+		
 		Tile t = Tile.tiles[tiles[x][y]];
 		if(t == null)
 		{

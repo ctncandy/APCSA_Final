@@ -7,6 +7,8 @@ public abstract class Creature extends Entity
 	public static final float DEFAULT_SPEED = 3.0f;
 	public static final int DEFAULT_CREATURE_WIDTH = 70;
 	public static final int DEFAULT_CREATURE_HEIGHT = 105;
+	private Game game;
+
 	
 	
 	protected int health;
@@ -25,8 +27,57 @@ public abstract class Creature extends Entity
 
 	public void move()
 	{
-		x+= xMove;
-		y+= yMove;
+		moveX();
+		moveY();
+	}
+	
+	public void moveX()
+	{
+		if(xMove > 0)
+		{
+			int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
+			
+			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+					!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT))
+			{
+				x += xMove;
+			}
+		}
+		else if(xMove < 0)
+		{//Moving left
+			int tx = (int) (x + xMove + bounds.x) / Tile.TILEWIDTH;
+			
+			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
+					!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT))
+			{
+				x += xMove;
+			}
+		}
+
+	}
+	
+	public void moveY()
+	{
+		if(yMove < 0){//Up
+			int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
+			
+			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty) &&
+					!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)){
+				y += yMove;
+			}
+		}else if(yMove > 0){//Down
+			int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT;
+			
+			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty) &&
+					!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)){
+				y += yMove;
+			}
+		}
+	}
+	
+	protected boolean collisionWithTile(int x, int y)
+	{
+		return game.getWorld().getTile(x, y).isSolid();
 	}
 	
 //getters and setters

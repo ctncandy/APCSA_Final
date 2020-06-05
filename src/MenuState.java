@@ -1,23 +1,21 @@
 import java.awt.Graphics;
 
-public class MenuState extends State 
-{
+public class MenuState extends State {
 
-	public MenuState(Game game)
-	{
+	public MenuState(Game game){
 		super(game);
 	}
-	
+
 	@Override
-	public void tick() 
-	{
+	public void tick() {
 		
 	}
 
 	@Override
-	public void render(Graphics g)
+	public void render(Graphics g) 
 	{
 		g.drawImage(Asset.standStill, 0, 0, null);
 	}
-
+	
 }
+
