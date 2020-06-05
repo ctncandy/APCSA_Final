@@ -10,7 +10,7 @@ public class GameState extends State
 	{
 		super(game);
 		player = new Player(game, 100,100);
-		world = new World ("/Users/rhea/eclipse-workspace/Sharma_Final/res/worlds/world1.txt");
+		world = new World ("res/worlds/world1");
 	}
 	
 	@Override
