@@ -20,7 +20,7 @@ public class Asset
 		
 		//Note: Dictory for the sheet should be changed, it was the only way this image would load, its annoying.
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/Users/rhea/eclipse-workspace/Sharma_Final/res/textures/spriteSheet.png"));
-		stone = sheet.crop(width, 0, width, height);
+		stone = sheet.crop(0, 0, width, height);
 		standStill = sheet.crop((int)(width * 2.5), 0, width, height);
 		dirt = sheet.crop(width, 0, width, height);
 		
