@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
 public class Asset 
 {
 	
-	private static final int width = 100, height = 100;
+	private static final int width = 95, height = 95;
 	
 	public static BufferedImage stone, dirt, standStill;
 	
@@ -21,7 +21,7 @@ public class Asset
 		//Note: Dictory for the sheet should be changed, it was the only way this image would load, its annoying.
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/Users/rhea/eclipse-workspace/Sharma_Final/res/textures/spriteSheet.png"));
 		stone = sheet.crop(width, 0, width, height);
-		standStill = sheet.crop(width * 2, 0, width, height);
+		standStill = sheet.crop((int)(width * 2.5), 0, width, height);
 		dirt = sheet.crop(width, 0, width, height);
 		
 	}
