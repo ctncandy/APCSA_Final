@@ -7,7 +7,7 @@ import java.awt.Graphics;
 		
 		public GameState(Game game){
 			super(game);
-			player = new Player(game, 100, 100);
+			player = new Player(game, 100, 250); // y was 100
 			world = new World(game, "res/worlds/world1");
 		}
 		
@@ -21,6 +21,10 @@ import java.awt.Graphics;
 		public void render(Graphics g) {
 			world.render(g);
 			player.render(g);
+		}
+		
+		public World getWorld() {
+			return world;
 		}
 
 	}

@@ -14,8 +14,8 @@ public class Game implements Runnable {
 	private Graphics g;
 	
 	//States
-	private State gameState;
-	private State menuState;
+	private GameState gameState;
+	private MenuState menuState;
 	
 	//Input
 	private KeyManager keyManager;
@@ -29,6 +29,7 @@ public class Game implements Runnable {
 		this.height = height;
 		this.title = title;
 		keyManager = new KeyManager();
+		// world = new World();
 	}
 	
 	private void init(){
@@ -140,10 +141,9 @@ public class Game implements Runnable {
 		}
 	}
 
-	private World world;
 	public World getWorld() 
 	{
-		return world;
+		return gameState.getWorld(); 
 	}
 	
 }

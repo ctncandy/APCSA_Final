@@ -7,7 +7,6 @@ public abstract class Creature extends Entity
 	public static final float DEFAULT_SPEED = 3.0f;
 	public static final int DEFAULT_CREATURE_WIDTH = 70;
 	public static final int DEFAULT_CREATURE_HEIGHT = 105;
-	private Game game;
 
 	
 	
