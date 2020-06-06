@@ -1,4 +1,6 @@
+//Helps draw the game, not rly used 
 import java.awt.Graphics;
+
 
 public class MenuState extends State {
 

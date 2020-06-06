@@ -1,3 +1,7 @@
+/**
+ * Entity on screen will be able to use the getters to determine their position if needed
+ * Mostly used for collision detection
+ */
 import java.awt.Graphics;
 import java.awt.Rectangle;
 

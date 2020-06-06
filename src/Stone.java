@@ -1,4 +1,4 @@
-
+//Stone tile class, returns that it is a solid object. 
 public class Stone extends Tile
 {
 

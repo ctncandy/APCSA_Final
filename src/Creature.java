@@ -1,3 +1,6 @@
+/**
+ * used for if player comes into collision with stone tiles, they will not go through them. 
+ */
 import java.awt.Graphics;
 
 public abstract class Creature extends Entity
@@ -7,17 +10,13 @@ public abstract class Creature extends Entity
 	public static final float DEFAULT_SPEED = 3.0f;
 	public static final int DEFAULT_CREATURE_WIDTH = 70;
 	public static final int DEFAULT_CREATURE_HEIGHT = 105;
-
 	
-	
-	protected int health;
 	protected float speed;
 	protected float xMove, yMove;
 	
 	public Creature(Game game, float x, float y, int width, int height)
 	{
 		super(game,x, y, width, height);
-		health = DEFAULT_HEALTH;
 		speed = DEFAULT_SPEED;
 		xMove = 0;
 		yMove = 0;
@@ -52,7 +51,8 @@ public abstract class Creature extends Entity
 				x += xMove;
 			}
 		}
-
+		//if (x > 600) game.startBattle();
+	
 	}
 	
 	public void moveY()
@@ -79,17 +79,7 @@ public abstract class Creature extends Entity
 		return game.getWorld().getTile(x, y).isSolid();
 	}
 	
-//getters and setters
-	public int getHealth() 
-	{
-		return health;
-	}
 
-
-	public void setHealth(int health) 
-	{
-		this.health = health;
-	}
 
 
 	public float getSpeed() 

@@ -1,4 +1,8 @@
-
+/**
+ * moves camera when the player moves 
+ * @author rhea
+ *
+ */
 public class GameCamera 
 {
 	private Game game;

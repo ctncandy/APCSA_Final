@@ -1,4 +1,5 @@
-
+//If there is an issue with parsing integers from the world1.txt file, 
+//the program will exit
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-
+//dirt tile class, has properities of tile class
 public class GrassTile extends Tile
 {
 

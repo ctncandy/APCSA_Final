@@ -1,7 +1,13 @@
+/**
+ * Draws the actual GUI
+ */
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Label;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Display 
 {
@@ -41,6 +47,7 @@ public class Display
 		frame.add(canvas);
 		frame.pack();
 		
+
 		
 	}
 	

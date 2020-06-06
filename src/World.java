@@ -1,3 +1,4 @@
+//draws the world 
 import java.awt.Graphics;
 
 public class World 
@@ -18,7 +19,8 @@ public class World
 		
 	}
 	
-	public void render(Graphics g)
+	//here is where the camera is moved with the player
+	public void render(Graphics g) 
 	{
 		int xStart = 0;
 		int xEnd = width;
@@ -34,6 +36,7 @@ public class World
 		}
 	}
 	
+	//collision dedection 
 	public Tile getTile(int x, int y)
 	{
 		if(x < 0 || y < 0 || x >= width || y >= height)
@@ -51,6 +54,7 @@ public class World
 		return t;
 	}
 	
+	//load the world1.txt file with tiles
 	private void loadWorld(String path)
 	{
 		String file = Utils.loadFileAsString(path);

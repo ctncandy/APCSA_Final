@@ -1,3 +1,6 @@
+/**
+ * if an issue arises and the image is unable to load, the program will exit
+ */
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;

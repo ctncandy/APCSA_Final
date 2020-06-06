@@ -1,3 +1,5 @@
+//Sets and gets the state, either battle or game. 
+
 import java.awt.Graphics;
 
 public abstract class State {

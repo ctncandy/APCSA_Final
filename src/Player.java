@@ -1,3 +1,6 @@
+/**
+ * Draws the actual player and controls for it
+ */
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -21,10 +24,13 @@ public class Player extends Creature
 		game.getGameCamera().centerOnEntity(this);
 	}
 	
+	//keyboard input from arrow keys and keymanager class
+	
 	private void getInput()
 	{
 		xMove = 0;
 		yMove = 0;
+		//
 		if(game.getKeyManager().up)		
 		{
 			yMove -= speed;
@@ -42,14 +48,18 @@ public class Player extends Creature
 			xMove += speed;
 		}
 		
+		if(game.getKeyManager().q)
+		{
+			
+		}
+		
 	}
 
+	//draws character
 	@Override
 	public void render(Graphics g) 
 	{
 		g.drawImage(Asset.standStill, (int) (x - game.getGameCamera().getxOffset()), (int) (y - game.getGameCamera().getyOffset()), width, height, null);
-
-	
 	}
 
 }

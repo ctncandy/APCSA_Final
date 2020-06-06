@@ -1,3 +1,6 @@
+/** 
+ * gets the sprite sheet and crops it, helps with asset method. 
+ */
 import java.awt.image.BufferedImage;
 
 public class SpriteSheet 
